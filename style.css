@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #9d50bb, #6e48aa);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff;
+    position: relative; /* Assegura que o z-index funcione corretamente */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.header-text {
+    animation: textFadeIn 2s ease-out;
+}
+
+@keyframes textFadeIn {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.container {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.card {
+    flex: 1 1 200px;
+    max-width: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.card .content p, .card .content a {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.card .content a {
+    padding: 6px 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.5s;
+}
+
+.card:hover a {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+}
+
+#particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8); /* Cor mais brilhante e opaca */
+    opacity: 1; /* Inicialmente visível */
+    animation: floatUp 10s infinite ease-in-out;
+    filter: brightness(150%) drop-shadow(0 0 6px #fff); /* Brilho e sombra mais marcada */
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.75); /* Aumentar o tamanho inicial */
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 1; /* Máxima visibilidade */
+    }
+    100% {
+        transform: translateY(-10vh) scale(2); /* Aumentar o tamanho final */
+        opacity: 0;
+    }
+}
+
+
+.contact-area {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 20px;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    width: 100%; /* Ajuste para ocupar toda a largura */
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 12px 30px;
+    border-radius: 25px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.contact-info p {
+    color: #ddd;
+    font-size: 1.1rem;
+}
+
+.contact-info strong {
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-element {
+    animation: fadeIn 1s ease-out;
+}
+
+button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #007BFF;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.parallax {
+    background-image: url('path/to/your-image.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+
+@keyframes text-pop {
+    0% { transform: scale(1); color: #000; }
+    50% { transform: scale(1.1); color: #007BFF; }
+    100% { transform: scale(1); color: #000; }
+}
+
+.dynamic-text {
+    display: inline-block;
+    animation: text-pop 3s infinite;
+}
+
